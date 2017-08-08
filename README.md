@@ -14,8 +14,8 @@ You can run script with `marathon run` command, but I highly recommend installat
 To install script as binary try:<br>
 `$ marathon install organize_imports.swift`<br>
 
-or<br>
-`$ marathon install https://raw.githubusercontent.com/swziy/OrganizeImports/master/organize_imports.swift`<br>
+or without repo cloning:<br>
+`$ marathon install swziy/OrganizeImports`<br>
 
 ## Usage
 
