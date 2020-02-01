@@ -3,7 +3,8 @@
 </p>
 
 # Organize Imports
-Simple Swift script to alphabetically organize imports in your project's files.
+Simple Swift script to alphabetically organize imports in your project's files.<br>
+Created with Swift Package Manager.
 
 ## Installation
 
