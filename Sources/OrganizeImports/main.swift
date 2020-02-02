@@ -55,7 +55,7 @@ func enumerate(_ files: [File]) throws {
         var linesArray = fileString.components(separatedBy: .newlines)
         let importsArray = linesArray.enumerated().map { $0 }.filter { $0.element.hasPrefix(C.File.prefix) }
 
-        let sortedImportsByString = importsArray.sorted(by: { $0.element < $1.element })
+        let sortedImportsByString = importsArray.sorted(by: { $0.element.lowercased() < $1.element.lowercased() })
         let sortedImportsByLineIndex = importsArray.sorted(by: { $0.offset < $1.offset })
 
         if importsArray.map({ $0.1 }) == sortedImportsByString.map({ $0.1 }) {

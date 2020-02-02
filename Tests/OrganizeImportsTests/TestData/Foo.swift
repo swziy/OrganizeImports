@@ -2,6 +2,7 @@ import CoreGraphics
 import Foundation
 import CoreAudio
 import UIKit
+import strangeCamelCaseImport
 import Contacts
 import AudioToolbox
 import MapKit
