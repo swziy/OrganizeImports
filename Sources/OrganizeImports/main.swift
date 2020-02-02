@@ -28,13 +28,13 @@ func getNewLineSign(from string: String) -> String? {
         return nil
     }
 
-    return string.substring(with: rangeOfNewLineSign)
+    let substring = string[rangeOfNewLineSign]
+    return String(substring)
 }
 
 func getFiles(with option: String, argument arg: String) throws -> [File]? {
     if option == C.Options.directory {
-        return try Folder(path: arg)
-            .makeFileSequence(recursive: true, includeHidden: false)
+        return try Folder(path: arg).files.recursive
             .filter({ (file) -> Bool in
                 if let fileExtension = file.extension, fileExtension == C.File.extension {
                     return true
@@ -69,7 +69,7 @@ func enumerate(_ files: [File]) throws {
         if let newLineSign = getNewLineSign(from: fileString) {
             let sortedString = linesArray.joined(separator: newLineSign)
             print(C.Message.sortedImports, file.1.name)
-            try file.1.write(string: sortedString)
+            try file.1.write(sortedString)
         }
     }
 }
